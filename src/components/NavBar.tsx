@@ -7,7 +7,7 @@ const NavBar = () => {
   const { logUserOut } = useUser();
   return (
     <nav className="bg-white dark:bg-gray-900 w-full z-20 fixed start-0 top-0 border-b border-gray-200 dark:border-gray-600">
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-2">
         <Link
           to={BASE_URL}
           className="flex items-center space-x-3 rtl:space-x-reverse"

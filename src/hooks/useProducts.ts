@@ -54,6 +54,7 @@ const useProducts = () => {
       .finally(() => {
         setIsVisible(false);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
   return { products, setFilters, getNextPage, getPreviousPage };
