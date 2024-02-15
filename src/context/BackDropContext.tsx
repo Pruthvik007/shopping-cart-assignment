@@ -2,8 +2,9 @@ import { createContext, useState } from "react";
 
 export const BackDropContext = createContext({
   isVisible: false,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  setIsVisible: (isVisible: boolean) => {},
+  setIsVisible: (isVisible: boolean) => {
+    isVisible;
+  },
 });
 
 export const BackDropProvider = ({
