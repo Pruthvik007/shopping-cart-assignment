@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { User } from "../types/User";
+import { useCart } from "../hooks/useCart";
 
 // Create a type for the context value
 type UserContextType = {
@@ -14,6 +15,7 @@ export const UserContext = createContext<UserContextType>({
 });
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
+  const { clearCart } = useCart();
   const [user, setUser] = useState<User | null>(
     JSON.parse(localStorage.getItem("user") || "null")
   );
@@ -26,6 +28,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const logUserOut = () => {
     setUser(null);
     localStorage.removeItem("user");
+    clearCart();
   };
 
   return (

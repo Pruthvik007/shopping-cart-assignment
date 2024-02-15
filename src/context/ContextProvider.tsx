@@ -6,9 +6,9 @@ import { BackDropProvider } from "./BackDropContext";
 const ContextProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <BackDropProvider>
-      <UserProvider>
-        <CartProvider>{children}</CartProvider>
-      </UserProvider>
+      <CartProvider>
+        <UserProvider>{children}</UserProvider>
+      </CartProvider>
     </BackDropProvider>
   );
 };
