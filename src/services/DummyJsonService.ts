@@ -1,6 +1,8 @@
 import { Endpoints } from "../constants/DummyJsonConstants";
+import DummyJsonHelper from "../helpers/DummyJsonHelper";
 import {
   FailureResponse,
+  FilterType,
   Page,
   Products,
   User,
@@ -16,12 +18,9 @@ class DummyJsonService {
     });
   }
 
-  getProducts(searchTerm?: string) {
-    const isSearchable = searchTerm && searchTerm.length > 0;
+  getProducts(filters: FilterType) {
     return fetchApi<Products & Page>({
-      url: isSearchable
-        ? Endpoints.SEARCH + searchTerm
-        : Endpoints.GET_PRODUCTS,
+      url: DummyJsonHelper.setFiltersToUrl(filters),
     });
   }
 

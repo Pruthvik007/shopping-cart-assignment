@@ -1,4 +1,4 @@
-import { BASE_URL } from "../constants/DummyJsonConstants";
+import { API_BASE_URL } from "../constants/DummyJsonConstants";
 
 export type FetchApiParamsType = {
   url?: string;
@@ -13,7 +13,7 @@ export async function fetchApi<T>({
   data = undefined,
   withAuth = false,
 }: FetchApiParamsType): Promise<T> {
-  const completeUrl = new URL(BASE_URL + url);
+  const completeUrl = new URL(API_BASE_URL + url);
   const response = await fetch(completeUrl, {
     method: methodType,
     body: JSON.stringify(data),

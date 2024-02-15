@@ -39,6 +39,8 @@ export type Products = {
 
 export type FilterType = {
   searchTerm: string;
+  limit: number;
+  skip: number;
 };
 
 export type CartItem = {

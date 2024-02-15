@@ -1,8 +1,10 @@
 import { useState } from "react";
 import DummyJsonService from "../services/DummyJsonService";
 import { useUser } from "../hooks/useUser";
+import { useBackDrop } from "../hooks/useBackDrop";
 
 const LoginPage = () => {
+  const { setIsVisible } = useBackDrop();
   const { logUserIn } = useUser();
   const [userCredentials, setUserCredentials] = useState<{
     username: string;
@@ -16,6 +18,7 @@ const LoginPage = () => {
   };
 
   const onLogin = () => {
+    setIsVisible(true);
     DummyJsonService.login(userCredentials)
       .then((res) => {
         if ("message" in res) {
@@ -26,6 +29,9 @@ const LoginPage = () => {
       })
       .catch((err) => {
         console.log("error", err);
+      })
+      .finally(() => {
+        setIsVisible(false);
       });
   };
   return (
