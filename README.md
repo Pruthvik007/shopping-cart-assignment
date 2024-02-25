@@ -9,9 +9,8 @@ This is a React project built using Vite and TypeScript, implementing a Shopping
 3. **Protected Home Page:** The home page is a protected route, allowing only logged-in users.
 4. **Product Fetching:** Fetches products from the [Dummy JSON Products API](https://dummyjson.com/docs/products).
 5. **Product Search:** Allows users to search for products based on their name.
-6. **Product Filtering:** ~~(Not implemented due to API limitations)~~
-7. **Cart Functionality:** Implements a cart feature where users can add products, remove products, and view the total amount of the cart.
-8. **Add to Cart Button:** Provides an "Add to Cart" button on product cards for easy adding of products to the cart.
+6. **Cart Functionality:** Implements a cart feature where users can add products, remove products, and view the total amount of the cart.
+7. **Add to Cart Button:** Provides an "Add to Cart" button on product cards for easy adding of products to the cart.
 
 ## Usage
 
